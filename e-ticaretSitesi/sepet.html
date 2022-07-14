@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style/sepet.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>furkan</title>
+    <script>
+        $(document).ready(function () {
+
+            urunlerim();
+        });
+
+    </script>
+</head>
+
+<body>
+    <div class="genel">
+        <header>
+            <a href="index.html"><img class="logo" src="image/logo.png" /> </a>     
+                <nav>
+                    <ul class="nav__links">
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="#">Erkek</a></li>
+                        <li><a href="#">Kadın</a></li>
+                        <li><a href="#">Elektronik</a></li>
+                        <li><a href="#">Moda</a></li>
+                    </ul>
+                </nav>
+            <ul class="nav__links2">
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signUp.html">Sign Up</a></li>
+                <li><a href="sepet.html">Sepetim</a></li>
+            </ul>
+        </header>
+        <div class="urunlerim">
+            <table class="urunbilgi">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th class="tanitim"></th>
+                        <th class="tanitim"></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="liste">
+                    <!--<tr>
+                        <td class="foto1"><img class="foto" src="/Users/Guest-12/Desktop/site/stiller/galeri/1/1.jpg"
+                                alt=""></td>
+                        <td class="urunadi1">ÇİFT RENK SWEAT</td>
+                        <td class="fiyat1">250TL</td>
+                        <td class="sil1">
+                            <button class="silme"> <img onclick="silBtn" class="silme" src="icon/delete.png"></button>
+                        </td>
+                        <td>
+                            <button class="allclear"> Hepsini Sil </button>
+                        </td>
+                    </tr>-->
+                </tbody>
+            </table>
+
+
+
+            <script>
+
+                function urunlerim() {
+                    const liste = document.querySelector("#liste");
+
+                    document.getElementById("liste").innerHTML=""; //tablonun içini boşaltıyor
+
+                    
+                    lUrun = localStorage.getItem("urunler");
+                    arr = JSON.parse(lUrun);
+
+                    for (let i = 0; i < arr.length; i++) {
+
+
+
+                        let tfoto = document.createElement("td");
+                        let tAd = document.createElement("td");
+                        let tFiyat = document.createElement("td");
+                        let tIslem = document.createElement("td");
+
+                        tfoto.className = "foto1";
+                        tAd.className = "urunadi1";
+                        tFiyat.className = "fiyat1"
+                        tIslem.className = "sil1";
+
+
+
+                        let FotoImg = document.createElement("img");
+                        FotoImg.className = "foto";
+                        FotoImg.src = arr[i].resimUrl;
+
+                        let delImg = document.createElement("img");
+                        delImg.className = "silmeImg";
+                        delImg.src = '../site/icon/delete.png';
+
+                        let delBtn = document.createElement("button");
+                        delBtn.className = "silme";
+                        delBtn.id = i;
+                        delBtn.onclick = function (e) {
+                            let text1 = localStorage.getItem("urunler");
+                            let localUrunler = [];
+                            localUrunler = JSON.parse(text1);
+
+                            let myObj1 = [];
+                            if (localUrunler != null && localUrunler.length > 0) {
+                                localUrunler.splice(i, 1);
+                                myObj1 = localUrunler;
+                            }
+                            
+                            const myJSON = JSON.stringify(localUrunler);
+                            localStorage.setItem("urunler", myJSON);
+
+
+                            liste.removeChild(this.parentNode.parentNode);
+                            urunlerim();
+                        }
+                        delBtn.appendChild(delImg);
+
+
+                        tfoto.appendChild(FotoImg);
+                        tAd.textContent = arr[i].urunAdi;
+                        tFiyat.textContent = arr[i].fiyat;
+                        tIslem.appendChild(delBtn);
+
+                        //tr elementi oluşturuyoruz
+                        let tr = document.createElement("tr");
+
+                        //tdleri tr içine ekliyoruz
+                        tr.appendChild(tfoto);
+                        tr.appendChild(tAd);
+                        tr.appendChild(tFiyat);
+                        tr.appendChild(tIslem);
+
+                        //tr elementini liste (tablo) içine ekliyoruz
+                        liste.appendChild(tr);
+
+
+
+                    }
+                }
+
+
+                function silBtn(index) {
+                    const liste = document.querySelector("#liste");
+                    const btnSilme = document.querySelector("silme");
+                    //btnSilme.id;
+                    liste.removeChild(this.parentNode.parentNode);
+                }
+
+            </script>
+</body>
+
+</html

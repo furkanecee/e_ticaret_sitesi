@@ -1,0 +1,168 @@
+*{
+    overflow: hidden;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    }
+    
+    
+    
+    .logo{
+    width: 105px;
+    height: 75px;
+    cursor: pointer;
+    }
+    
+    li, a, button{
+    font-weight: 700;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    border: none;
+    color: rgb(0,0,0);
+    
+    }
+    
+    header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10% ;
+    
+    }
+    
+    .nav__links{
+    list-style: none;
+    }
+    
+    .nav__links li{
+    display: inline-block;
+    padding: 0px 20px;
+    }
+    
+    .nav__links li a {
+    transition: all 0.3s ease 0s;
+    
+    }
+    
+    .nav__links li a:hover {
+    
+        color:#d81d1d ;
+    }
+    
+    .login{
+        padding:9px 25px;
+        border:none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: 800ms;
+    }
+    
+    .login{
+    
+      font-family: 'Oswald',sans-serif;
+    }
+    
+    
+    .nav__links2{
+      list-style: none;
+      }
+      
+      .nav__links2 li{
+      display: inline-block;
+      padding: 0px 20px;
+      }
+      
+      .nav__links2 li a {
+      transition: all 0.3s ease 0s;
+      
+      }
+      
+      .nav__links2 li a:hover {
+      transition: all 300ms;
+          color:#d81d1d ;
+      }
+            .urunlerim{
+                width: 100%;
+                height: 100%;
+
+
+            }
+
+            .urunbilgi{
+                background-color: #d81d1d;
+            position: relative;
+            top:100px;
+            width:100%;
+            height:100%;
+border:#d81d1d 1    ;
+border-radius: 12px;;
+
+
+            }
+            
+
+            .foto1{
+
+                height: 100px;
+
+            }
+            .foto{
+                width:100px;
+                height: 100px;
+                border-radius: 100px;
+                border:#000000  solid;
+                }
+            .urunadi1{
+                position: relative;
+        
+                font-family: Arial;
+                font-size:30px;
+            }
+
+            .fiyat1{
+                position: relative;
+                left:7%;
+                font-family:Arial;
+                font-size: 20px;
+            }
+            .sil1   {
+                cursor: pointer;
+                width: 60px;
+                height: 60px;
+            }
+            .silme, .silmeImg{
+                cursor: pointer;
+                position: relative;
+                left:1%;
+                width: 40px;
+                height: 40px;
+                border:none;
+                background-color: transparent;
+            }
+            .tanitim{
+                font-family: Arial, Helvetica, sans-serif;
+
+
+            }
+
+            
+            ::-webkit-scrollbar{
+                background-color: white;
+                border-radius:12px;
+                width: 23px;
+                border: 5px  solid white;
+                }
+                ::-webkit-scrollbar-thumb{
+                background-color: #d81d1d;
+                border-radius: 13px;
+                border-right: 5px  solid white;
+                border-left: 5px  solid white;
+                border-top: 5px  solid white;
+                border-bottom: 5px  solid white;
+                }
+                ::-webkit-scrollbar-thumb:hover{
+                    transition:600ms;
+                background-color: #d81d1db4;
+                
+                }
